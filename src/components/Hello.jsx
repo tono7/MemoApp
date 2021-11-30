@@ -14,7 +14,7 @@ function Hello(props) {
 }
 
 Hello.propTypes = {
-    children: string.isRequired,        // 必須引数
+    children: string.isRequired,        // isRequired：必須引数
     bang: bool,
     style: shape(),
 };
