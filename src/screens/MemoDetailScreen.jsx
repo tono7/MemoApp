@@ -20,7 +20,7 @@ export default function MemoDetailScreen() {
                 イクボスのすすめ★セミナーの【動画・資料/アンケート】も公開中です。
                 </Text>
             </ScrollView>
-            <CircleButton style={{ top: 160, bottom: 'auto' }}>+</CircleButton>
+            <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
         </View>
     );
 }
