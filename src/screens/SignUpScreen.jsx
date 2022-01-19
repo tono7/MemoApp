@@ -1,5 +1,6 @@
 import React from "react";
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import { touchProps } from "react-native-web/dist/cjs/modules/forwardedProps";
 
 import AppBar from '../components/AppBar'
 import Button from '../components/Button'
@@ -15,7 +16,9 @@ export default function SignUpScreen() {
                 <Button label="Submit" />
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Allredy registered?</Text>
-                    <Text style={styles.footerLink}>Log in here!</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.footerLink}>Log in here!</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
