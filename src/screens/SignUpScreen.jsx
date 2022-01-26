@@ -1,19 +1,29 @@
 import React from "react";
-import {View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
-import { touchProps } from "react-native-web/dist/cjs/modules/forwardedProps";
+import {
+    View, Text, TextInput, StyleSheet, TouchableOpacity
+} from 'react-native';
 
-import AppBar from '../components/AppBar'
 import Button from '../components/Button'
+import CircleButton from '../components/CircleButton'
 
-export default function SignUpScreen() {
+
+export default function SignUpScreen(props) {
+    const { navigation } = props;
     return (
         <View style={styles.container}>
-            <AppBar />
             <View style={styles.inner}>
                 <Text style={styles.title}>Sign Up</Text>
                 <TextInput style={styles.input} value='Email Address' />
                 <TextInput style={styles.input} value='Password' />
-                <Button label="Submit" />
+                <Button
+                 label="Submit"
+                 onPress={() => {
+                     navigation.reset({
+                      index: 0,
+                      routes: [{ name: 'MemoList'}],
+                    });
+                  }}
+                />
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Allredy registered?</Text>
                     <TouchableOpacity>

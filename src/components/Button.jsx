@@ -1,9 +1,9 @@
-import { func,string } from "prop-types";
 import React from "react"
 import {TouchableOpacity, Text, StyleSheet} from 'react-native'
+import { string, func } from "prop-types";
 
 export default function Button(props) {
-    const {label, onPress} = props;
+    const { label, onPress} = props;
     return (
         <TouchableOpacity style={styles.buttonContainer} onProps={onPress}>
             <Text style={styles.buttonLabel}>{label}</Text>
