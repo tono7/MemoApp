@@ -4,6 +4,7 @@ import firebase from 'firebase';
 
 import Button from '../components/Button';
 import Loading from "../components/Loading";
+import { translateErrors } from "../utils";
 
 
 export default function LogInScreen(props) {
@@ -40,8 +41,8 @@ export default function LogInScreen(props) {
         })
         // ログインが失敗した場合
         .catch( (error) => {
-            console.log (error.code, error.message);
-            Alert.alert(error.code);
+            const errorMsg = translateErrors(error.code);
+            Alert.alert(errorMsg.title, errorMsg.description);
         })
         // 成功失敗どちらも関係なく実行する処理
         .then(() => {

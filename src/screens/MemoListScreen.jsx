@@ -41,7 +41,7 @@ export default function MemoListScreen(props) {
       }, (error) => {
         setLoading(false);
         console.log(error);
-        Alert.alert('データの読み込みに失敗しました');
+        Alert.alert('データの読み込みに失敗しました(MemoListScreen)');
       });
     }
     return unsubscribe;
@@ -51,7 +51,6 @@ export default function MemoListScreen(props) {
     return (
       <View style={emptyStyles.container}>
        <Loading isLoading={isLoading}/>
-
         <View style={emptyStyles.inner}>
           <Text style={emptyStyles.title}>最初のメモを作成しましょう。</Text>
           <Button
